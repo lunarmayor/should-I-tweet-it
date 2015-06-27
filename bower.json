@@ -1,0 +1,21 @@
+{
+  "name": "shiti-algorithm",
+  "version": "0.0.0",
+  "authors": [
+    "Michael Morrissey <mikehmorrissey@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize": "~1.0.4"
+  }
+}
