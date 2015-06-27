@@ -1,0 +1,58 @@
+body {
+  background: rgb(0, 81, 116);
+  color: white;
+  font-family: inconsolata;
+  font-weight: 200;
+  height: 100%;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0;
+}
+p {
+ color: rgb(123, 203, 226);
+ letter-spacing: 1px;
+ line-height: 20px;
+ margin-bottom: 35px;
+ margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+ font-weight: 200;
+ margin-bottom: 10px;
+}
+h1 {
+  font-size: 2.1em !important;
+}
+h2 {
+  color: #7bcbe2;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+h4 {
+  color: rgb(249, 249, 249);
+  font-size: 20px;
+  font-weight: bold;
+}
+main {
+  background: #1C8EBE;
+  bottom: 0;
+  left: 100px;
+  overflow: auto;
+  padding: 20px 50px;
+  position: absolute;
+  top: 0;
+  width: 300px;
+}
+aside {
+  bottom: 0;
+  left: 500px;
+  overflow: auto;
+  padding: 40px 60px;
+  position: absolute;
+  top: 0;
+}
+
