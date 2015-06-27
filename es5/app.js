@@ -5,7 +5,7 @@ var app = express();
 
 require('node-jsx').install();
 var React = require('react');
-var ReactApp = require('./components/App');
+var ReactApp = require('./react_components/App');
 
 // view engine
 app.use(express['static']('dist')).set('view engine', 'jade').set('views', 'views');
