@@ -52,8 +52,7 @@ gulp.task('watch', function() {
   gulp.watch('assets/stylesheets/**/*.scss', ['styles']);
   gulp.watch('es6/**/*.js', ['transpile']);
   gulp.watch('assets/javascripts/**/*.js', ['scripts']);
-  gulp.watch('components/**/*.js', ['scripts']);
-  gulp.watch(['dis/**'], livereload.changed);
+  gulp.watch('es6/components/**/*.js', ['scripts']);
 });
 
 gulp.task('bower', function() {

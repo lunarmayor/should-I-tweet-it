@@ -1,9 +1,7 @@
 const express = require('express');
 const app = express();
-
-require('node-jsx').install()
 const React = require('react')
-const ReactApp = require('./react_components/App')
+const ReactApp = require('./../react_components/App')
 
 // view engine
 app.use(express.static('dist'))
