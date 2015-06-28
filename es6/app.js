@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express'
+import React from 'react'
+import App from './react_components/App'
 const app = express();
-const React = require('react')
-const ReactApp = require('./../react_components/App')
 
 // view engine
 app.use(express.static('dist'))
@@ -11,7 +11,7 @@ app.use(express.static('dist'))
 // routes
 app.get('/', (req, res) => {
   res.render('index.jade', {
-    app: React.renderToString(React.createElement(ReactApp)),
+    app: React.renderToString(<App />),
   });
 })
 

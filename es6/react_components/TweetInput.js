@@ -1,16 +1,17 @@
-import { React } from 'react'
+import React from 'react'
 
 class TweetInput extends React.Component {
-  getInitialState() {
-    return {
-      charsLeft: 140,
-    }
+  constructor(props) {
+    super(props);
+    this.state = { charsLeft: 140 };
   }
 
   calculateChars() {
-    let totalChars = React.findDomNode(this.refs.input).value.length;
+    window.that = this
+    window.React = React
+    let totalChars = React.findDOMNode(this.refs.input).value.length;
     let charsLeft = 140 - totalChars;
-    this.setState({charsLeft: charsLeft});
+    this.setState({ charsLeft: charsLeft });
     this.handleCountColor();
   }
 
@@ -30,7 +31,7 @@ class TweetInput extends React.Component {
     return (
       <div className="tweetInput">
         <h4>Try it out</h4>
-        <textarea onChange={this.calculateChars} ref="input" placeholder="your brilliant tweet..." className="tweetInput-textarea"></textarea>
+        <textarea onChange={this.calculateChars.bind(this)} ref="input" placeholder="your brilliant tweet..." className="tweetInput-textarea"></textarea>
         <div className="tweetInput-btn" onClick={this.startAnalysis}>Analyze</div>
         <div className="tweetInput-characterCount" ref="characterCount">{this.state.charsLeft}</div>
       </div>

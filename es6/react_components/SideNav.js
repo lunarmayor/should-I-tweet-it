@@ -1,5 +1,5 @@
-import { React } from 'react'
-import { THREE } from 'three'
+import React from 'react'
+import THREE from 'three'
 
 // <SideNav />
 class SideNav extends React.Component {
@@ -57,7 +57,7 @@ class SideNav extends React.Component {
 
   animate() {
     this.logo.rotation.y += 0.001;
-    window.requestAnimationFrame(this.animate);
+    window.requestAnimationFrame( () => this.animate());
     this.renderer.render(this.scene, this.camera);
   }
 

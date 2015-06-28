@@ -44,7 +44,10 @@ gulp.task('scripts', function() {
 
 gulp.task('transpile', function() {
   return gulp.src('es6/**/*.js').pipe(babel())
-    .on('error', function() { console.log('babel error :(') })
+    .on('error', function() {
+      console.log('babel error :(');
+      this.emit('end');
+    })
     .pipe(gulp.dest('es5'));
 })
 
@@ -52,7 +55,7 @@ gulp.task('watch', function() {
   gulp.watch('assets/stylesheets/**/*.scss', ['styles']);
   gulp.watch('es6/**/*.js', ['transpile']);
   gulp.watch('assets/javascripts/**/*.js', ['scripts']);
-  gulp.watch('es6/components/**/*.js', ['scripts']);
+  gulp.watch('es6/react_components/**/*.js', ['scripts']);
 });
 
 gulp.task('bower', function() {

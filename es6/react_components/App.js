@@ -1,8 +1,8 @@
-import { React } from 'react'
-import { SideNav } from './SideNav'
-import { PulseMenu } from './PulseMenu'
-import { TweetsAnalyzed } from './TweetsAnalyzed'
-import { TweetInput } from './TweetInput';
+import React from 'react'
+import SideNav from './SideNav'
+import PulseMenu from './PulseMenu'
+import TweetsAnalyzed from './TweetsAnalyzed'
+import TweetInput from './TweetInput';
 
 class App extends React.Component {
   render () {

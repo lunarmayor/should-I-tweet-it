@@ -1,15 +1,14 @@
-import { React } from 'react'
+import React from 'react'
 
 // <TweetsAnalyzed >
 class TweetsAnalyzed extends React.Component {
-  getInitialState() {
-    return {
-      tweetsAnalyzed: 12404204,
-    }
+  constructor(props) {
+    super(props);
+    this.state = { tweetsAnalyzed: 12404204 };
   }
 
   componentDidMount() {
-    setInterval(this.incrementTweets, 300)
+    setInterval( () => this.incrementTweets(), 300)
   }
 
   incrementTweets() {
