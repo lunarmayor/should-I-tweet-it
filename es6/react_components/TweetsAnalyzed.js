@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedNumber } from 'react-intl'
 
 // <TweetsAnalyzed >
 class TweetsAnalyzed extends React.Component {
@@ -22,7 +23,7 @@ class TweetsAnalyzed extends React.Component {
     return (
       <div className="tweetAnalyzer">
         <div className="tweetAnalyzer-count">
-          {this.state.tweetsAnalyzed.toLocaleString()}
+          <FormattedNumber value={this.state.tweetsAnalyzed} />
         </div>
         <div className="tweetAnalyzer-desc">
           Tweets Analyzed

@@ -11,7 +11,7 @@ app.use(express.static('dist'))
 // routes
 app.get('/', (req, res) => {
   res.render('index.jade', {
-    app: React.renderToString(<App />),
+    app: React.renderToString(React.createElement(App)),
   });
 })
 

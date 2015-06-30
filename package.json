@@ -9,13 +9,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "backbone": "^1.2.1",
     "browserify": "^10.2.4",
     "express": "^4.12.4",
+    "format-number": "^1.0.2",
     "hamljs": "^0.6.2",
     "jade": "^1.11.0",
+    "jquery": "^2.1.4",
     "jsx": "^0.9.89",
     "node-jsx": "^0.13.3",
     "react": "^0.13.3",
+    "react-intl": "^1.2.0",
     "reactify": "^1.1.1",
     "three": "^0.71.0"
   },
