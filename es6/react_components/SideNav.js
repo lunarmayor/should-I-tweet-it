@@ -5,14 +5,6 @@ import THREE from 'three'
 class SideNav extends React.Component {
   componentDidMount() {
     this.setupLogo();
-    this.animateVerticalText();
-  }
-
-  animateVerticalText() {
-    setTimeout( () => {
-      React.findDOMNode(this.refs.VText)
-        .classList.add('is-visible');
-    }, 800)
   }
 
   setupLogo() {
@@ -28,7 +20,7 @@ class SideNav extends React.Component {
       alpha: true,
       antialias: true,
     });
-    this.renderer.setSize(100, 100);
+    this.renderer.setSize(80, 80);
     this.renderer.domElement.classList.add('sideNav-logo');
     React.findDOMNode(this).appendChild(this.renderer.domElement);
   }
@@ -63,11 +55,7 @@ class SideNav extends React.Component {
 
   render() {
     return (
-      <nav className="sideNav">
-        <div className="sideNav-verticalText" ref="VText">
-          A<br/>I<br/><br/>S<br/>O<br/>L<br/>U<br/>T<br/>I<br/>O<br/>N<br/>S
-        </div>
-      </nav>
+      <nav className="sideNav"></nav>
     );
   }
 }
