@@ -1,9 +1,16 @@
 .tweetAnalyzer {
   padding: 29px;
-  background: rgba(28, 142, 190, 0.32);
-  float: left;
-  margin-right: 33px;
+  background: rgba(233, 242, 245, 0.93);
   margin-bottom: 50px;
+  text-align: center;
+  color: rgb(28, 142, 190);
+  transition: background 1s, border 0.2s;
+  border-right: 0px solid #7bcbe2;
+  border-left: 0px solid #7bcbe2;
+  &:hover {
+    background: rgba(223, 242, 245, 1);
+    border-width: 8px;
+  }
 }
 .tweetAnalyzer-count {
  font-size: 30px;
@@ -12,3 +19,12 @@
   font-size: 21px;
   margin-top: 10px;
 }
+.tweetAnalyzer-count, .tweetAnalyzer-desc {
+  transition: transform 1s;
+  .tweetAnalyzer:hover & {
+     transform: scale(1.1)translateZ(0)
+   }
+ }
+
+
+

@@ -1,5 +1,6 @@
 body {
-  background: rgb(0, 81, 116);
+  //background: rgb(0, 81, 116);
+  background: #F9F9F9;
   color: white;
   font-family: inconsolata;
   font-weight: 200;
@@ -11,7 +12,7 @@ body {
 p {
  color: rgb(123, 203, 226);
  letter-spacing: 1px;
- line-height: 20px;
+ line-height: 23px;
  margin-bottom: 35px;
  margin: 0;
 }
@@ -40,19 +41,32 @@ h4 {
 main {
   background: #1C8EBE;
   bottom: 0;
-  left: 100px;
+  left: 80px;
   overflow: auto;
   padding: 20px 50px;
   position: absolute;
   top: 0;
   width: 300px;
+  transition: background 0.4s;
+}
+
+main.is-hidden {
+  background: #F9F9F9;
+}
+.main-innerContainer {
+  transition: opacity 0.6s;
+
+}
+.main-innerContainer.is-hidden {
+  opacity: 0;
 }
 aside {
   bottom: 0;
-  left: 500px;
+  left: 479px;
   overflow: auto;
-  padding: 40px 60px;
+  padding: 40px 40px;
   position: absolute;
+  right:0;
   top: 0;
 }
 

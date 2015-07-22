@@ -1,5 +1,4 @@
 .tweetInput {
-  max-width: 350px;
 }
 .tweetInput-characterCount {
   color: gray;
@@ -11,24 +10,31 @@
   color: rgb(219, 81, 81);
 }
 .tweetInput-textarea {
-  background: rgb(249, 249, 249);
-  border: none;
+  background: #ffffff;
+  border: 2px solid rgb(219, 219, 219);
   font-family: inherit;
   font-size: 18px;
   height: 104px;
-  margin: 13px 0px 0px;
+  margin: 15px 0px 0px;
   padding: 20px;
-  width: 100%
+  width: 100%;
+  resize: none;
+  transition: border 0.5s;
+  &:focus {
+    outline: none;
+    border-bottom: 0.2em solid rgb(28, 142, 190);
+  }
 }
 .tweetInput-btn {
   padding: 10px;
   margin-top: 10px;
-  border: 1px solid white;
+  border: 1px solid #1C8EBE;
   float: right;
   transition: background 0.75s, border-color 0.75s;
   cursor: pointer;
+  color: #1C8EBE;
   &:hover {
-    background: rgba(white, 0.2);
-    border-color: rgba(white, 0.6);
+    background: rgba(#1C8EBE, 0.2);
+    border-color: rgba(#1C8EBE, 0.5);
   }
 }
