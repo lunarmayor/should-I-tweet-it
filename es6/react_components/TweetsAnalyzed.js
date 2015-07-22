@@ -1,4 +1,5 @@
 import React from 'react'
+import Intl from 'intl'
 import { FormattedNumber } from 'react-intl'
 
 // <TweetsAnalyzed >

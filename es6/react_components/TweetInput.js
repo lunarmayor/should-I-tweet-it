@@ -7,32 +7,34 @@ class TweetInput extends React.Component {
   }
 
   calculateChars() {
-    window.that = this
-    window.React = React
     let totalChars = React.findDOMNode(this.refs.input).value.length;
     let charsLeft = 140 - totalChars;
-    this.setState({ charsLeft: charsLeft });
     this.handleCountColor();
+    this.setState({ charsLeft: charsLeft });
   }
 
   handleCountColor() {
     let classList = React.findDOMNode(this.refs.characterCount)
                       .classList;
 
-    let action = this.state.charsLeft < 0 ? 'add' : 'remove';
+    let action = this.state.charsLeft < 1 ? 'add' : 'remove';
     classList[action]('is-over');
   }
 
+  tweetText() {
+    return React.findDOMNode(this.refs.input).value
+  }
+
   startAnalysis() {
-    console.log('hello')
+    console.log(this.tweetText())
+    ShouldITweetIt.trigger('analyzeTweet', this.tweetText());
   }
 
   render() {
     return (
       <div className="tweetInput">
-        <h4>Try it out</h4>
         <textarea onChange={this.calculateChars.bind(this)} ref="input" placeholder="your brilliant tweet..." className="tweetInput-textarea"></textarea>
-        <div className="tweetInput-btn" onClick={this.startAnalysis}>Analyze</div>
+        <div className="tweetInput-btn" onClick={this.startAnalysis.bind(this)}>Analyze</div>
         <div className="tweetInput-characterCount" ref="characterCount">{this.state.charsLeft}</div>
       </div>
     )
