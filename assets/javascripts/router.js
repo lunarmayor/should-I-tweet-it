@@ -4,7 +4,7 @@ import DOM from './utilities/DOM'
 import { Promise } from 'es6-promise'
 import React from 'react'
 import TweetAnalyzer from '../../es6/react_components/TweetAnalyzer'
-import Loader from '../../es6/react_components/GeometricLoader'
+import GeometricLoader from '../../es6/react_components/GeometricLoader'
 
 class Router extends Backbone.Router {
   routes() {
@@ -24,20 +24,19 @@ class Router extends Backbone.Router {
   }
 
   analyzeTweet(text) {
-    new Promise( (resolve) => this.hideMainContainer(resolve) )
-      .then( () => this.showLoader() )
+    this.hideMainContainer()
   }
 
-  hideMainContainer(resolve) {
+  hideMainContainer() {
     let mainContainer = DOM.find('.main-innerContainer')
     let main = DOM.find('main')
-    main.addEventListener('transitionend', () => resolve() )
+    main.addEventListener('transitionend', () => this.showLoader() )
     mainContainer.classList.add('is-hidden')
     main.classList.add('is-hidden')
   }
 
   showLoader() {
-    React.render(<GeometricLoader/>, DOM.find('.main'))
+    React.render(<GeometricLoader width='80' height='80' />, DOM.find('.app-container'))
   }
 
   showTweetAnalyzer() {

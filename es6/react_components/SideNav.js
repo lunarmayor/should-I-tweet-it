@@ -1,31 +1,11 @@
 import React from 'react'
+import ThreeComponent from '@mmorrissey/three-component'
 import THREE from 'three'
 
 // <SideNav />
-class SideNav extends React.Component {
-  componentDidMount() {
-    this.setupLogo();
-  }
-
-  setupLogo() {
-    this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(75, 1, 0.1, 10000);
-
-    this.setupRenderer();
-    this.addObject();
-  }
-
-  setupRenderer() {
-    this.renderer = new THREE.WebGLRenderer({
-      alpha: true,
-      antialias: true,
-    });
-    this.renderer.setSize(80, 80);
-    this.renderer.domElement.classList.add('sideNav-logo');
-    React.findDOMNode(this).appendChild(this.renderer.domElement);
-  }
-
-  addObject() {
+// TODO: extract the Globe into its own Component
+class SideNav extends ThreeComponent {
+  renderScene() {
     let material = new THREE.MeshBasicMaterial({
       color: 0xffffff,
       vertexColors: THREE.FaceColors,
@@ -55,7 +35,7 @@ class SideNav extends React.Component {
 
   render() {
     return (
-      <nav className="sideNav"></nav>
+      <nav className="sideNav" ref="renderer"></nav>
     );
   }
 }

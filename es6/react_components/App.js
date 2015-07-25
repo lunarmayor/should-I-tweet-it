@@ -8,7 +8,7 @@ class App extends React.Component {
   render () {
     return (
       <div className="app">
-        <SideNav />
+        <SideNav width='80' height='80' rendererClass='sideNav-logo'/>
         <div className="main">
           <div className="main-innerContainer">
             <PulseMenu />
