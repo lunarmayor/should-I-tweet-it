@@ -1,4 +1,4 @@
-.tweetAnalyzer {
+.statPanel {
   padding: 29px;
   background: rgba(233, 242, 245, 0.93);
   margin-bottom: 50px;
@@ -12,16 +12,16 @@
     border-width: 8px;
   }
 }
-.tweetAnalyzer-count {
+.statPanel-stat {
  font-size: 30px;
 }
-.tweetAnalyzer-desc {
+.statPanel-desc {
   font-size: 21px;
   margin-top: 10px;
 }
-.tweetAnalyzer-count, .tweetAnalyzer-desc {
+.statPanel-stat, .statPanel-desc {
   transition: transform 1s;
-  .tweetAnalyzer:hover & {
+  .statPanel:hover & {
      transform: scale(1.1)translateZ(0)
    }
  }
