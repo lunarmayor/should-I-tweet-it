@@ -1,14 +1,18 @@
 import React from 'react'
+import TweetStore from './../stores/TweetStore'
 
 class TweetAnalyzer extends React.Component {
   render() {
-    console.log(this.props)
-    let words = this.props.text.split(' ').map( (word) => {
-      return <span>{word} </span>
+    let words = TweetStore.text.split(' ').map( (word) => {
+      return <span className="tweetAnalyzer-word">{word + ' '}</span>
     })
 
     return (
-      <div>{ words }</div>
+      <div className="tweetAnalyzer">
+        <div className="tweetAnalyzer-container">
+          { words }
+        </div>
+      </div>
     )
   }
 }

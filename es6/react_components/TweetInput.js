@@ -1,8 +1,6 @@
 import React from 'react'
-import { Navigation } from 'react-router'
-import mixin from 'react-mixin'
-
-const CanNavigate = mixin.decorate(Navigation)
+import CanNavigate from './../decorators/CanNavigate'
+import TweetStore from './../stores/TweetStore'
 
 @CanNavigate
 class TweetInput extends React.Component {
@@ -31,7 +29,8 @@ class TweetInput extends React.Component {
   }
 
   startAnalysis() {
-    this.transitionTo('loading', { text: this.tweetText() });
+    TweetStore.text = this.tweetText();
+    this.transitionTo('loading');
   }
 
   render() {
