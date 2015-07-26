@@ -28,7 +28,8 @@ class Loader extends React.Component {
   }
 
   changeMessage() {
-    if(this.state.descNum > 3) {
+
+    if(this.state.descNum >= (loadingMessages.length - 1)) {
       clearInterval(this.timer)
       this.transitionTo('analyzing_tweet')
     } else {
