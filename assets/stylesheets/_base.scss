@@ -48,6 +48,7 @@ main {
   top: 0;
   width: 300px;
   transition: background 0.4s;
+  z-index: -1;
 }
 
 main.is-hidden {
@@ -68,5 +69,6 @@ aside {
   position: absolute;
   right:0;
   top: 0;
+  transition: left 0.8s;
 }
 

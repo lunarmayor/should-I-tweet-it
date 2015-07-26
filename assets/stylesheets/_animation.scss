@@ -8,3 +8,28 @@
     opacity: 0;
   }
 }
+
+.fade-leave {
+  opacity: 1;
+}
+.fade-leave.fade-leave-active {
+  .mPanel {
+    background: #F9F9F9;
+    left: -200px;
+  }
+  aside {
+    left: 1000px;
+  }
+
+  opacity: 0.01;
+  transition: opacity .6s ease-in;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity .6s ease-in;
+}

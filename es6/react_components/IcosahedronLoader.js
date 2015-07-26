@@ -1,10 +1,8 @@
 import React from 'react'
-import THREE from 'three'
 import ThreeComponent from '@mmorrissey/three-component'
-import SideNav from './SideNav'
+import THREE from 'three'
 
-// <GeometricLoader />
-class GeometricLoader extends ThreeComponent {
+class IcosahedronLoader extends ThreeComponent {
   renderScene() {
     let material = new THREE.MeshBasicMaterial({
       color: '#0099cc',
@@ -27,17 +25,9 @@ class GeometricLoader extends ThreeComponent {
 
   render() {
     return (
-      <div className="app">
-        <SideNav width='80' height='80' rendererClass='sideNav-logo'/>
-        <div className='main'>
-          <div className="geomLoader">
-            <div className="geomLoader-canvasContainer" ref="renderer"></div>
-            <div className="geomLoader-desc">priming semantic engines</div>
-          </div>
-        </div>
-      </div>
+      <div className="icoLoader" ref="renderer"></div>
     )
   }
 }
 
-export default GeometricLoader
+export default IcosahedronLoader

@@ -1,0 +1,55 @@
+.loader {
+  position: absolute;
+  left: 80px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader-container {
+  padding-bottom: 100px;
+}
+.loader-desc {
+  color: #0099CD;
+  position: relative;
+  top: 80px;
+  font-size: 22px;
+}
+.loader-pulse {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  background: #B6DEE0;
+  border-radius: 100px;
+  left: 50%;
+  transform: translate(-50%,0);
+  transform-origin: 0;
+  animation: deep-pulse 2s infinite;
+}
+
+.loader-pulse2 {
+  @extend .loader-pulse;
+  animation: 2s deep-pulse 1s infinite;
+}
+.icoLoader {
+  text-align: center;
+  canvas {
+    position: relative;
+    border-radius: 100px;
+    background: #B6DEE0;
+  }
+}
+
+@keyframes deep-pulse {
+  from {
+    transform: scale(1.0)translate(-50%,0);
+  }
+  to {
+    transform: scale(1.4)translate(-50%, 0);
+    opacity: 0.1;
+  }
+}
+
+

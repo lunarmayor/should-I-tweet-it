@@ -31,8 +31,7 @@ class TweetInput extends React.Component {
   }
 
   startAnalysis() {
-    console.log(this.tweetText())
-    ShouldITweetIt.trigger('analyzeTweet', this.tweetText());
+    this.transitionTo('loading', { text: this.tweetText() });
   }
 
   render() {

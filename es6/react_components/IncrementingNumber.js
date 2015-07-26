@@ -11,7 +11,11 @@ class IncrementingNumber extends React.Component {
 
   componentDidMount() {
     let ms = this.props.ms || 300;
-    setInterval( () => this.increment(), ms);
+    this.timer = setInterval( () => this.increment(), ms);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer)
   }
 
   increment() {
