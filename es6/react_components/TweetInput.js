@@ -1,5 +1,10 @@
 import React from 'react'
+import { Navigation } from 'react-router'
+import mixin from 'react-mixin'
 
+const CanNavigate = mixin.decorate(Navigation)
+
+@CanNavigate
 class TweetInput extends React.Component {
   constructor(props) {
     super(props);

@@ -36,14 +36,16 @@ gulp.task('scripts', function() {
     extensions: ['.js'],
     debug: true
   })
-  .transform(babelify)
+  .transform(babelify.configure({
+      optional: ["es7.decorators"]
+  }))
   .bundle()
   .pipe(source('bundle.js'))
   .pipe(gulp.dest('dist/assets/js/'));
 });
 
 gulp.task('transpile', function() {
-  return gulp.src('es6/**/*.js').pipe(babel())
+  return gulp.src('es6/**/*.js').pipe(babel({ optional: ['es7.decorators'] }))
     .on('error', function() {
       console.log('babel error :(');
       this.emit('end');
