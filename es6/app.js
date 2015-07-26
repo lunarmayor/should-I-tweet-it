@@ -1,6 +1,8 @@
 import express from 'express'
 import React from 'react'
-import App from './react_components/App'
+import { Router } from 'react-router'
+import Location from 'react-router/lib/Location'
+import routes from './routes'
 const app = express();
 
 // view engine
@@ -10,9 +12,15 @@ app.use(express.static('dist'))
 
 // routes
 app.get('/', (req, res) => {
-  res.render('index.jade', {
-    app: React.renderToString(React.createElement(App)),
-  });
+  let location = new Location(req.path, req.query);
+
+  Router.run(routes, location, (err, initialState, transition) => {
+    let element = React.createElement(Router, initialState)
+    let html = React.renderToString(element)
+    res.render('index.jade', {
+      app: html,
+    });
+  })
 })
 
 // server

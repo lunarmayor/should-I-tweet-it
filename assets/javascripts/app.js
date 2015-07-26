@@ -1,16 +1,11 @@
-import Backbone from 'backbone'
-import _ from 'underscore'
-import Router from './Router'
-import Ready from './utilities/Ready'
-import extend from './utilities/extend'
+import { Router } from 'react-router';
+import React from 'react'
+import BrowserHistory from 'react-router/lib/BrowserHistory'
+import routes from './../../es6/routes'
+import DOM from '@mmorrissey/dom'
 
-window.ShouldITweetIt = {
-  start: function() {
-    new Router();
-    Backbone.history.start({ pushState: true })
-  }
-}
-
-_.extend(ShouldITweetIt, Backbone.Events)
-
-Ready( () => { ShouldITweetIt.start() })
+DOM.ready( () => {
+  let history = new BrowserHistory();
+  let appContainer = DOM.find('.app-container');
+  React.render(<Router history={history} children={routes}/>, appContainer);
+})
