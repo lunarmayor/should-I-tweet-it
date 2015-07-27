@@ -1,0 +1,36 @@
+.result {
+  position: absolute;
+  top: 0;
+  background: #067FB2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 272px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: #067FB2;
+}
+.result-no {
+  opacity: 0;
+}
+.result-no.is-growing {
+  animation: 2s grow 2s 1 forwards
+}
+.result-should {
+  font-size: 17px;
+  position: absolute;
+  left: 91px;
+  top: 41px;
+}
+
+@keyframes grow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}

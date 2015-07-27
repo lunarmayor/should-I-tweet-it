@@ -1,6 +1,7 @@
 import React from 'react'
 import TweetStore from './../stores/TweetStore'
 import DOM from '@mmorrissey/DOM'
+import CanNavigate from './../decorators/CanNavigate'
 
 let loadingMessages = [
   'assessing trends...',
@@ -14,6 +15,7 @@ let loadingMessages = [
   'calculating result...',
 ];
 
+@CanNavigate
 class TweetAnalyzer extends React.Component {
   constructor(props) {
     super(props)
@@ -21,7 +23,7 @@ class TweetAnalyzer extends React.Component {
   }
 
   componentDidMount() {
-    this.timer = setInterval( () => this.changeMessage(), 2500)
+    this.timer = setInterval( () => this.changeMessage(), 2000)
     this.wordTimer = setInterval( () => this.setAnalysisEmphasis(), 1000)
   }
 
@@ -43,6 +45,7 @@ class TweetAnalyzer extends React.Component {
   changeMessage() {
     if(this.state.descNum >= (loadingMessages.length - 1)) {
       clearInterval(this.timer)
+      this.transitionTo('result')
     } else {
       this.setState({
         descNumber: this.state.descNum++
