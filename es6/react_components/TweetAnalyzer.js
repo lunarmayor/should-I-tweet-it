@@ -11,7 +11,6 @@ let loadingMessages = [
   'analyzing hipness...',
   'checking browser history...',
   'frowning...',
-  'regaining focus...',
   'calculating result...',
 ];
 
@@ -23,8 +22,8 @@ class TweetAnalyzer extends React.Component {
   }
 
   componentDidMount() {
-    this.timer = setInterval( () => this.changeMessage(), 2000)
-    this.wordTimer = setInterval( () => this.setAnalysisEmphasis(), 1000)
+    this.timer = setInterval( () => this.changeMessage(), 1800)
+    this.wordTimer = setInterval( () => this.setAnalysisEmphasis(), 900)
     DOM.find('body').classList.add('is-blue')
   }
 
