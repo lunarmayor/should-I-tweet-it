@@ -9,6 +9,7 @@ let loadingMessages = [
   'praying to the almighty Jobs',
   'crawling the social graph',
   'introspecting on my choices',
+  'starting tweet analysis',
 ]
 
 // <Loader />

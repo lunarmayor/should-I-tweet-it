@@ -25,11 +25,13 @@ class TweetAnalyzer extends React.Component {
   componentDidMount() {
     this.timer = setInterval( () => this.changeMessage(), 2000)
     this.wordTimer = setInterval( () => this.setAnalysisEmphasis(), 1000)
+    DOM.find('body').classList.add('is-blue')
   }
 
   componentWillUnmount() {
     clearInterval(this.timer)
     clearInterval(this.wordTimer)
+    DOM.find('body').classList.remove('is-blue')
   }
 
   setAnalysisEmphasis() {
@@ -45,6 +47,7 @@ class TweetAnalyzer extends React.Component {
   changeMessage() {
     if(this.state.descNum >= (loadingMessages.length - 1)) {
       clearInterval(this.timer)
+      clearInterval(this.wordTimer)
       this.transitionTo('result')
     } else {
       this.setState({

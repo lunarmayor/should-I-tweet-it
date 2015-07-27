@@ -8,6 +8,10 @@ body {
   letter-spacing: 2px;
   margin: 0;
   padding: 0;
+
+  &.is-blue {
+    background: #067FB2
+  }
 }
 p {
  color: rgb(123, 203, 226);
