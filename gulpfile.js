@@ -66,3 +66,4 @@ gulp.task('bower', function() {
 });
 
 gulp.task('default', ['watch', 'scripts', 'styles', 'transpile']);
+gulp.task('build', ['scripts', 'styles', 'transpile']);

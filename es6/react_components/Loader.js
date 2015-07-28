@@ -5,7 +5,7 @@ import CanNavigate from './../decorators/CanNavigate'
 
 let loadingMessages = [
   'priming semantic engines',
-  'crawling the social graph',
+  'map reducing the social graph',
   'introspecting',
   'starting tweet analysis',
 ]
@@ -19,7 +19,7 @@ class Loader extends React.Component {
   }
 
   componentDidMount() {
-    this.timer = setInterval( () => this.changeMessage(), 1800);
+    this.timer = setInterval( () => this.changeMessage(), 2000);
   }
 
   componentWillUnmount() {
