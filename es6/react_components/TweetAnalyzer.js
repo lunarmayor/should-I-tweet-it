@@ -1,6 +1,6 @@
 import React from 'react'
 import TweetStore from './../stores/TweetStore'
-import DOM from '@mmorrissey/DOM'
+import DOM from '@mmorrissey/dom'
 import CanNavigate from './../decorators/CanNavigate'
 
 let loadingMessages = [
