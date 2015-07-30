@@ -24,7 +24,27 @@
   left: 91px;
   top: 41px;
 }
+.result-tweet {
+  position: absolute;
+  font-size: 12px;
+  text-decoration: none;
+  left: 55px;
+  bottom: -19px;
+  color: white;
+}
+.result-tweet.is-entering {
+  opacity: 0;
+  animation: 2s fadein 6s 1 forwards;
+}
 
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @keyframes grow {
   from {
     opacity: 0;
